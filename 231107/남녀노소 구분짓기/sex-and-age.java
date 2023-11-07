@@ -9,6 +9,6 @@ public class Main {
         age = sc.nextInt();
 
         if (gender == 0) System.out.println(age >= 19 ? "MAN" : "BOY");
-        else System.out.println(age >= 19 ? "GIRL" : "WOMAN");
+        else System.out.println(age >= 19 ? "WOMAN" : "GIRL");
     }
 }
