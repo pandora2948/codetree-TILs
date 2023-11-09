@@ -6,10 +6,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a, b;
         double result;
-        a = sc.nextInt() * 10;
+        a = sc.nextInt();
         b = sc.nextInt();
+
+        System.out.printf("%d.", a / b);
+        a *= 10;
         int i = 0;
-        System.out.print("0.");
         while (i < 20) {
             System.out.printf("%d", a / b);
             a = a % b * 10;
