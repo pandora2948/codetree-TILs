@@ -10,7 +10,7 @@ public class Main {
         b = sc.nextInt();
 
         System.out.printf("%d.", a / b);
-        a *= 10;
+        a = a % b * 10;
         int i = 0;
         while (i < 20) {
             System.out.printf("%d", a / b);
