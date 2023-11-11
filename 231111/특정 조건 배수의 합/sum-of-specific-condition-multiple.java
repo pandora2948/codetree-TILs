@@ -7,8 +7,15 @@ public class Main {
         int a, b, res = 0;
         a = sc.nextInt();
         b = sc.nextInt();
-        for (int i = a; i <= b; i += 1) {
-            if (i % 5 == 0) res += i;
+        if (a < b) {
+            for (int i = a; i <= b; i += 1) {
+                if (i % 5 == 0) res += i;
+            }
+        }
+        else if (a > b) {
+            for (int i = b; i <= a; i += 1) {
+                if (i % 5 == 0) res += i;
+            }
         }
         System.out.print(res);
     }
