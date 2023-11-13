@@ -8,7 +8,7 @@ public class Main {
 
         for (i = 1; i <= 10; i += 1) {
             res *= i;
-            if (res > i) break;
+            if (res > n) break;
         }
         System.out.print(i);
     }
