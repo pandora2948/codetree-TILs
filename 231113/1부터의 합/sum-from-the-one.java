@@ -8,7 +8,7 @@ public class Main {
 
         for (i = 1; i <= 100; i += 1) {
             res += i;
-            if (res > n) {
+            if (res >= n) {
                 break;
             }
         }
