@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // 여기에 코드를 작성해주세요.
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = n; i > 0; i -= 1) {
+            for(int j = 0; j < i; j += 1) {
+                System.out.print("*");
+            }
+            for(int k = 0; k < 2 * (n - i); k += 1) {
+                System.out.print(" ");
+            }
+            for(int l = 0; l < i; l += 1) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
