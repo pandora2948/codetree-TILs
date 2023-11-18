@@ -5,31 +5,17 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if (n % 2 != 0) {
-            for (int i = 0; i < n - 1; i += 1) {
-                for (int j = 0; j < n; j += 1) {
-                    if (i == 0 || (j % 2 == 1 && i <= j)) {
-                        System.out.print("* ");
-                    }
-                    else {
-                        System.out.print("  ");
-                    }
+        
+        for (int i = 0; i < n; i += 1) {
+            for (int j = 0; j < n; j += 1) {
+                if (i == 0 || (j % 2 == 1 && i <= j)) {
+                    System.out.print("* ");
                 }
-                System.out.println();
-            }
-        }
-        else {
-            for (int i = 0; i < n; i += 1) {
-                for (int j = 0; j < n; j += 1) {
-                    if (i == 0 || (j % 2 == 1 && i <= j)) {
-                        System.out.print("* ");
-                    }
-                    else {
-                        System.out.print("  ");
-                    }
+                else {
+                    System.out.print("  ");
                 }
-                System.out.println();
             }
+            System.out.println();
         }
     }
 }
