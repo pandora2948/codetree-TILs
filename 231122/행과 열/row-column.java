@@ -7,7 +7,7 @@ public class Main {
         int a = sc.nextInt(), b = sc.nextInt();
 
         for (int i = 1; i <= a; i += 1) {
-            for (int j = 1; j <= 5; j += 1) {
+            for (int j = 1; j <= b; j += 1) {
                 System.out.printf("%d ", i * j);
             }
             System.out.println();
