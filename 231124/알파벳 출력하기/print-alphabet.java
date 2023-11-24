@@ -9,7 +9,7 @@ public class Main {
         for (int i = 1; i <= n; i += 1) {
             for (int j = 1; j <= i; j += 1) {
                 System.out.print((char) c);
-                c += 1;
+                c = (int) 'Z' < c + 1 ? (int) 'A' : c + 1;
             }
             System.out.println();
         }
