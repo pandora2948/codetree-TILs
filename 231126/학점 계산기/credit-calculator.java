@@ -15,10 +15,10 @@ public class Main {
         }
 
         System.out.printf("%.1f\n", (double) acc / n);
-        if (acc / n > 4) {
+        if (acc / n >= 4) {
             System.out.print("Perfect");
         }
-        else if (acc / n > 3) {
+        else if (acc / n >= 3) {
             System.out.print("Good");
         }
         else {
