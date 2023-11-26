@@ -9,7 +9,7 @@ public class Main {
 
         for (int i = 0; i < 10; i += 1) {
             int n = sc.nextInt();
-            leng = i;
+            leng += 1;
             if (n == 0) break;
             nums[i] = n;
             acc += n;
