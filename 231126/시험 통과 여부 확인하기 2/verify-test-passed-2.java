@@ -11,7 +11,7 @@ public class Main {
             int acc = 0;
             for (int j = 0; j < 4; j += 1) {
                 int score = sc.nextInt();
-                scores[i] = score;
+                scores[j] = score;
                 acc += score;
             }
             System.out.println(acc / 4 >= 60 ? "pass" : "fail");
