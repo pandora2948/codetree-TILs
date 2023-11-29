@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         final int INT_MIN = Integer.MIN_VALUE;
-        int maxVal = INT_MIN, secondMax = INT_MIN;
+        int maxVal = INT_MIN, secondMax = INT_MIN, cnt = 0;
         int[] arr = new int[n];
 
         for (int i = 0; i < n; i += 1) {
@@ -15,8 +15,16 @@ public class Main {
         }
 
         for (int i = 0; i < n; i += 1) {
-            if (arr[i] != maxVal && secondMax < arr[i]) {
+            if (arr[i] == maxVal) {
+                cnt += 1;
+            }
+            else if (secondMax < arr[i]) {
                 secondMax = arr[i];
+            }
+
+            if (cnt == 2) {
+                secondMax = maxVal;
+                break;
             }
         }
 
