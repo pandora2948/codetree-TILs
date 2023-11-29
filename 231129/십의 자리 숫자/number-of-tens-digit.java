@@ -14,7 +14,7 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < 10; i += 1) {
+        for (int i = 0; i < 9; i += 1) {
             System.out.printf("%d - %d\n", i + 1, arr[i]);
         }
     }
