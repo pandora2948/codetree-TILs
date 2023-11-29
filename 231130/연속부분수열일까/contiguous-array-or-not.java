@@ -18,7 +18,12 @@ public class Main {
 
         for (int i = 0; i < n1; i += 1) {
             for (j = 0; j < n2;) {
-                if (arrA[i + j] != arrB[j]) break;
+                try {
+                    if (arrA[i + j] != arrB[j]) break;
+                }
+                catch (Exception e) {
+                    break;
+                }
                 j += 1;
             }
 
