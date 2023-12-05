@@ -15,10 +15,8 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             len += strs[i].length();
-            for (int j = 0; j < strs[i].length(); j += 1) {
-                if (strs[i].charAt(j) == 'a') {
-                    cnt += 1;
-                }
+            if (str[i].charAt(0) == 'a') {
+                cnt += 1;
             }
         }
         
