@@ -6,34 +6,24 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String strA = sc.next();
         String strB = sc.next();
-
-        for (int i = 0; i < strA.length(); i += 1) {
+        StringBuilder sbA = new StringBuilder();
+        StringBuilder sbB = new StringBuilder();
+        
+        for (int i = 0; i < strA.length(); i += 1){
             char c = strA.charAt(i);
-            if (c < '0' || c > '9') {
-                for (int j = i; j < strA.length(); j += 1) {
-                    char c2 = strA.charAt(j);
-                    if (c2 >= '0' && c2 <= '9') {
-                        strA = strA.substring(0, i).concat(strA.substring(j));
-                        break;
-                    }
-                }
+            if (c >= '0' && c <= '9') {
+                sbA.append(c);
             }
         }
 
         for (int i = 0; i < strB.length(); i += 1) {
             char c = strB.charAt(i);
-            if (c < '0' || c > '9') {
-                for (int j = i; j < strB.length(); j += 1) {
-                    char c2 = strB.charAt(j);
-                    if (c2 >= '0' && c2 <= '9') {
-                        strB = strB.substring(0, i).concat(strB.substring(j));
-                        break;
-                    }
-                }
+            if (c >= '0' && c <= '9') {
+                sbB.append(c);
             }
         }
 
-        System.out.println(Integer.parseInt(strA) + Integer.parseInt(strB));
+        System.out.println(Integer.parseInt(sbA.toString()) + Integer.parseInt(sbB.toString()));
 
     }
 }
