@@ -6,13 +6,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String strA = sc.next();
         String strB = sc.next();
-
-        for (int i = 0; i <= strA.length() - strB.length(); i += 1) {
+        int i = 0;
+        
+        while (strA.contains(strB)) {
             if (strA.startsWith(strB, i)) {
                 strA = strA.substring(0, i).concat(strA.substring(i + strB.length()));
                 i = 0;
             }
+            else {
+                i += 1;
+            }
         }
+
         System.out.println(strA);
     }
 }
