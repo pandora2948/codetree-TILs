@@ -19,11 +19,8 @@ public class Main {
                     break;
 
                 case 3:
-                    String tempStr = "";
-                    for (int j = str.length(); j > 0; j -= 1) {
-                        tempStr = tempStr.concat(str.substring(j - 1, j));
-                    }
-                    str = tempStr;
+                    StringBuilder strBuild = new StringBuilder();
+                    str = strBuild.append(str).reverse().toString();
                     break;
 
                 default:
