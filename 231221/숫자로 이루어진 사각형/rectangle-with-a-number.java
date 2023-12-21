@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
-    static int cnt = 1;
     public static void printRect(int n) {
+        int cnt = 1;
         for (int i = 0; i < n; i += 1) {
             for (int j = 0; j < n; j += 1) {
                 System.out.printf("%d ", cnt);
