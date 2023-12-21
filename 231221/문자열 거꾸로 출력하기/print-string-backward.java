@@ -10,11 +10,11 @@ public class Main {
             if (str.equals("END")) {
                 break;
             }
-
-            StringBuilder strBuild = new StringBuilder();
-            strBuild.append(str).reverse();
-            System.out.println(strBuild.toString());
-
+            
+            for (int i = str.length() - 1; i >= 0; i -= 1) {
+                System.out.print(str.charAt(i));
+            }
+            System.out.println();
         }
 
     }
