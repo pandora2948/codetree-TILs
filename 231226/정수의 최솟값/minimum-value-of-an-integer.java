@@ -2,31 +2,49 @@ import java.util.Scanner;
 
 public class Main {
     public static int getMin(int a, int b, int c) {
-        int res;
-        if (a > b && a > c) {
-            if (b > c) {
+        int res = 0;
+        
+        if (a > b) {
+            if (b >= c) {
                 res = c;
             }
             else {
                 res = b;
             }
         }
-        else if (b > a && b > c) {
-            if (a > c) {
+        else if (b > a) {
+            if (a >= c) {
                 res = c;
             }
             else {
                 res = a;
             }
         }
-        else {
-            if (a > b) {
+        else if (b > a) {
+            if (a >= b) {
                 res = b;
             }
             else {
                 res = a;
             }
         }
+        else if (c > a){
+            if (a >= b) {
+                res = b;
+            }
+            else {
+                res = a;
+            }
+        }
+        else if (b > c) {
+            if (c >= a) {
+                res = a;
+            }
+            else {
+                res = c;
+            }
+        }
+
         return res;
     }
 
