@@ -44,6 +44,10 @@ public class Main {
                 res = c;
             }
         }
+        else {
+            res = a;
+        }
+        
 
         return res;
     }
