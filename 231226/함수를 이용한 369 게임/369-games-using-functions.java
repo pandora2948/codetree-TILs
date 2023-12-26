@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean checkNum(int n) {
-        return (n / 10) % 3 == 0 || n % 10 % 3 == 0;
+        return ((n % 100) / 10) % 3 == 0 || n % 10 % 3 == 0;
     }
     
     public static boolean multOfThree(int n) {
