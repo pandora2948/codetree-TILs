@@ -17,12 +17,16 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int sum = 0;
-
-        for (int i = a; i <= b; i += 1) {
-            sum += checkPrime(i);
+        if (a - b != 0) {
+            for (int i = a; i <= b; i += 1) {
+                sum += checkPrime(i);
+            }
+            System.out.println(sum);
+        }
+        else {
+            System.out.println(0);
         }
 
-        System.out.println(sum);
         
         
     }
