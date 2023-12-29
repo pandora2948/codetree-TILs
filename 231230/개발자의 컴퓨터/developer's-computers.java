@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int min = 0;
-        int[] times = new int[1000];
+        int[] times = new int[1001];
         int[] idx = {Integer.MAX_VALUE, 0};
 
         for (int i = 0; i < n; i += 1) {
