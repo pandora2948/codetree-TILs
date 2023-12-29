@@ -15,10 +15,10 @@ public class Main {
             int b = sc.nextInt();
 
             idx[0] = Math.min(idx[0], s);
-            idx[1] = Math.max(idx[1], s + t);
+            idx[1] = Math.max(idx[1], t);
 
-            for (int j = 0; j < t; j += 1) {
-                times[s + j] += b;
+            for (int j = s; j <= t; j += 1) {
+                times[j] += b;
             }
         }
 
