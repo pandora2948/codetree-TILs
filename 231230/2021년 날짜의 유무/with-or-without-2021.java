@@ -13,9 +13,7 @@ public class Main {
                 for (int j = 0; j < 28; j += 1) {
                     cal[i][j] = 1;
                 }
-            }
-
-            if (i % 2 == 0) {
+            } else if (i % 2 == 0) {
                 for (int j = 0; j < 31; j += 1) {
                     cal[i][j] = 1;
                 }
@@ -29,6 +27,5 @@ public class Main {
         }
 
         System.out.println(cal[m][d] == 1 ? "Yes" : "No");
-        
     }
 }
