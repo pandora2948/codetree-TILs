@@ -8,7 +8,7 @@ public class Main {
         int d = sc.nextInt() - 1;
         int[][] cal = new int[21][51];
 
-        for (int i = 0; i < 12; i += 1) {
+        for (int i = 0; i < 7; i += 1) {
             if (i == 1) {
                 for (int j = 0; j < 28; j += 1) {
                     cal[i][j] = 1;
@@ -23,6 +23,19 @@ public class Main {
                     cal[i][j] = 1;
                 }
 
+            }
+        }
+        
+        for (int i = 7; i < 12; i += 1) {
+            if (i % 2 == 1) {
+                for (int j = 0; j < 31; j += 1) {
+                    cal[i][j] = 1;
+                }
+            }
+            else {
+                for (int j = 0; j < 30; j += 1) {
+                    cal[i][j] = 1;
+                }
             }
         }
 
