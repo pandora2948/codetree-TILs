@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt() - 1;
         int d = sc.nextInt() - 1;
-        int[][] cal = new int[12][31];
+        int[][] cal = new int[21][51];
 
         for (int i = 0; i < 12; i += 1) {
             if (i == 1) {
