@@ -8,28 +8,26 @@ public class Main {
 
         if (y % 100 == 0 && y % 400 == 0) return true;
 
-        return false;
+        return y % 100 != 0;
     }
 
     public static boolean checkValidDate() {
         if (m > 12) return false;
 
         if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
-            if (d <= 31) return true;
+            return d <= 31;
         }
         else if (m == 2) {
             if (checkLeapYear(y)) {
-                if (d <= 29) return true;
+                return d <= 29;
             }
             else {
-                if (d <= 28) return true;
+                return d <= 28;
             }
         }
-        else if (m <= 12) {
-            if (d <= 30) return true;
+        else {
+            return d <= 30;
         }
-        
-        return false;
     }
 
     public static String checkSeasons() {
