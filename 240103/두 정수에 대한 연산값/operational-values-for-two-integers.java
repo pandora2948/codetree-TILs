@@ -1,28 +1,34 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void magicCal(int[] arr) {
-        int a = arr[0];
-        int b = arr[1];
+class IntWrapper {
+    int value;
 
-        if (a > b) {
-            arr[0] += 25;
-            arr[1] *= 2;
+    IntWrapper(int val) {
+        this.value = val;
+    }
+};
+
+public class Main {
+    public static void magicCal(IntWrapper a, IntWrapper b) {
+        if (a.value > b.value) {
+            a.value += 25;
+            b.value *= 2;
         }
         else {
-            arr[0] *= 2;
-            arr[1] += 25;
+            a.value *= 2;
+            b.value += 25;
         }
     }
+    
     public static void main(String[] args) {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
-        int[] arg = {sc.nextInt(), sc.nextInt()};
         
-        magicCal(arg);
+        IntWrapper a = new IntWrapper(sc.nextInt());
+        IntWrapper b = new IntWrapper(sc.nextInt());
         
-        for (int i = 0; i < 2; i += 1) {
-            System.out.printf("%d ", arg[i]);
-        }
+        magicCal(a, b);
+        
+        System.out.printf("%d %d", a.value, b.value);
     }
 }
