@@ -2,17 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     static int[] arr;
-    public static int getMaximum(int n) {
+    public static int f(int n) {
         if (n == 0) return arr[0];
         
-        int cur = arr[n];
+        int b = f(n - 1);
 
-        if (getMaximum(n - 1) > cur) {
-            return getMaximum(n - 1);
-        }
-        else {
-            return cur;
-        }
+        return b < arr[n] ? arr[n] : b;
     }
 
     public static void main(String[] args) {
@@ -25,6 +20,6 @@ public class Main {
             arr[i] = sc.nextInt();
         }
         
-        System.out.println(getMaximum(n - 1));
+        System.out.println(f(n - 1));
     }
 }
