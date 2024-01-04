@@ -12,17 +12,17 @@ public class Main {
             char query = q[i];
 
             if (query == 'L') {
-                if (d - 1 < 0) {
+                if (d == 0) {
                     d = 3;
                 }
                 else {
-                    d = d - 1;
+                    d -= 1;
                 }
                 continue;
             }
 
             if (query == 'R') {
-                d += 1 % 4;
+                d = (d + 1) % 4;
                 continue;
             }
             
