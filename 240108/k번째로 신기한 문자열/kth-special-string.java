@@ -17,7 +17,7 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             String str = sc.next();
-            if (t.length() >= str.length()) continue;
+            if (t.length() > str.length()) continue;
 
             if (t.equals(str.substring(0, t.length()))) {
                 strs[cnt] = str;
