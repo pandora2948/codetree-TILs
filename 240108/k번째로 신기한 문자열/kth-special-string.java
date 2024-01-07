@@ -8,13 +8,17 @@ public class Main {
         int k = sc.nextInt();
         String t = sc.next();
         String[] strs = new String[n];
+        
         for (int i = 0; i < n; i += 1) {
             strs[i] = "".concat(String.valueOf(Character.valueOf((char) ('z' + 1))));
         }
+        
         int cnt = 0;
 
         for (int i = 0; i < n; i += 1) {
             String str = sc.next();
+            if (t.length() >= str.length()) continue;
+
             if (t.equals(str.substring(0, t.length()))) {
                 strs[cnt] = str;
                 cnt += 1;
