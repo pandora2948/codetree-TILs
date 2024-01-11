@@ -8,16 +8,6 @@ public class Main {
         int h = sc.nextInt(), m = sc.nextInt(), th = sc.nextInt(), tm = sc.nextInt();
         int answer = 0;
         
-        while (h != th || m != tm) {
-            answer += 1;
-            m += 1;
-
-            if (m == 60) {
-                h += 1;
-                m = 0;
-            }
-        }
-
-        System.out.println(answer);
+        System.out.println((th - h) * 60 + tm - m);
     }
 }
