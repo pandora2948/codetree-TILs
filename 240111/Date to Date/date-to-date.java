@@ -14,9 +14,8 @@ public class Main {
                 days[i] = 28;
                 continue;
             }
-            
-            if (i % 2 == 0) {
-                if (i < 8) {
+            if (i < 7) {
+                if (i % 2 == 0) {
                     days[i] = 31;
                 }
                 else {
@@ -24,7 +23,7 @@ public class Main {
                 }
             }
             else {
-                if (i < 8) {
+                if (i % 2 == 0) {
                     days[i] = 30;
                 }
                 else {
@@ -32,7 +31,7 @@ public class Main {
                 }
             }
         }
-        
+
         while (m1 != m2 || d1 != d2) {
             d1 += 1;
             res += 1;
