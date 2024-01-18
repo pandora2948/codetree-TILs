@@ -14,7 +14,7 @@ public class Main {
         }
         secondDate += d2;
 
-        return firstDate - secondDate;
+        return secondDate - firstDate;
     }
     public static void main(String[] args) {
         // 여기에 코드를 작성해주세요.
@@ -26,14 +26,14 @@ public class Main {
         String[] days = new String[] {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
         int gap = countDateGap(m1, d1, m2, d2);
-        
-        if (gap > 0) {
-            for (int i = gap; i > 0; i -= 1) {
+
+        if (gap < 0) {
+            for (int i = gap; i < 0; i += 1) {
                 cnt = cnt - 1 < 0 ? 6 : cnt -1;
             }
         }
-        else if (gap < 0){
-            cnt = gap % 7;
+        else if (gap > 0){
+            cnt += gap % 7;
         }
 
         System.out.print(days[cnt]);
