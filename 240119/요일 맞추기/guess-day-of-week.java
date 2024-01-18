@@ -21,21 +21,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int m1 = sc.nextInt(), d1 = sc.nextInt();
         int m2 = sc.nextInt(), d2 = sc.nextInt();
-        int cnt = 1;
 
         String[] days = new String[] {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
         int gap = countDateGap(m1, d1, m2, d2);
 
         if (gap < 0) {
-            for (int i = gap; i < 0; i += 1) {
-                cnt = cnt - 1 < 0 ? 6 : cnt -1;
+            while (gap < 0) {
+                gap += 7;
             }
         }
-        else if (gap > 0){
-            cnt = (cnt + gap) % 7;
-        }
 
-        System.out.print(days[cnt]);
+        System.out.print(days[(gap + 1) % 7]);
     }
 }
