@@ -7,12 +7,10 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         int n = sc.nextInt();
 
-        
-
         do {
             sb.append(n % 2);
             n /= 2;
-        } while (n != 0)
+        } while (n != 0);
 
         System.out.println(sb.reverse().toString());
     }
