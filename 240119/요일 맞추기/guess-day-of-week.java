@@ -33,7 +33,7 @@ public class Main {
             }
         }
         else if (gap > 0){
-            cnt += gap % 7;
+            cnt = (cnt + gap) % 7;
         }
 
         System.out.print(days[cnt]);
