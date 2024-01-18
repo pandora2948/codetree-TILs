@@ -4,12 +4,12 @@ public class Main {
     static int[] dates = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     public static int countDateGap(int m1, int d1, int m2, int d2) {
         int firstDate = 0, secondDate = 0;
-        for (int i = 0; i < m1; i += 1) {
+        for (int i = 0; i < m1 - 1; i += 1) {
             firstDate += dates[i];
         }
         firstDate += d1;
 
-        for (int i = 0; i < m2; i += 1) {
+        for (int i = 0; i < m2 - 1; i += 1) {
             secondDate += dates[i];
         }
         secondDate += d2;
