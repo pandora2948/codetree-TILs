@@ -17,7 +17,7 @@ public class Main {
         int m2 = sc.nextInt(), d2 = sc.nextInt();
         String t = sc.next();
 
-        int gap = countDates(m2, d2) - countDates(m1, d1);
+        int gap = Math.abs(countDates(m2, d2) - countDates(m1, d1));
 
         switch (t) {
             case "Tue":
