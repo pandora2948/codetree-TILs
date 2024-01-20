@@ -31,7 +31,7 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             int start = arr[i][0];
-            int end = arr[i][1] - 1;
+            int end = arr[i][1];
             for (int j = start; j < end; j += 1) {
                 resArr[j] += 1;
             }
