@@ -23,7 +23,7 @@ public class Main {
                 max = Math.max(max, pos);
             }
             else {
-                for (int j = pos; j > pos - amount; j -= 1) {
+                for (int j = pos - 1; j >= pos - amount; j -= 1) {
                     arr[j] += 1;
                 }
                 pos -= amount;
