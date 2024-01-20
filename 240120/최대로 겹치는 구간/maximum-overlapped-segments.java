@@ -38,7 +38,7 @@ public class Main {
         }
 
         int max = flatArr[flatArr.length - 1] + offset;
-        for (int i = 0; i < max; i += 1) {
+        for (int i = 0; i <= max; i += 1) {
             res = Math.max(res, resArr[i]);
         }
         
