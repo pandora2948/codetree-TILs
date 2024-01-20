@@ -21,11 +21,13 @@ public class Main {
             arr[i][0] = x1;
             arr[i][1] = x2;
         }
-        offset = Math.abs(offset);
+        if (offset < 0) {
+            offset = Math.abs(offset);
 
-        for (int i = 0; i < n; i += 1) {
-            arr[i][0] += offset;
-            arr[i][1] += offset;
+            for (int i = 0; i < n; i += 1) {
+                arr[i][0] += offset;
+                arr[i][1] += offset;
+            }
         }
 
         for (int i = 0; i < n; i += 1) {
