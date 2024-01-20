@@ -6,28 +6,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[][] arr = new int [n][2];
-        Integer[] flatArr = new Integer[n * 2];
         int[] resArr = new int[201];
         int res = 0;
+        int offset = 0;
+        int border = 200;
 
         for (int i = 0; i < n; i += 1) {
             Integer x1 = sc.nextInt();
             Integer x2 = sc.nextInt();
             
+            offset = Math.min(offset, Math.min(x1, x2));
+            border = Math.max(border, Math.max(x1, x2));
+            
             arr[i][0] = x1;
             arr[i][1] = x2;
-            flatArr[i] = x1;
-            flatArr[n * 2 - 1 - i] = x2;
         }
-        
-        Arrays.sort(flatArr);
-        int offset = Math.abs(flatArr[0]);
 
         for (int i = 0; i < n; i += 1) {
             arr[i][0] += offset;
             arr[i][1] += offset;
         }
-
 
         for (int i = 0; i < n; i += 1) {
             int start = arr[i][0];
@@ -37,8 +35,7 @@ public class Main {
             }
         }
 
-        int max = flatArr[flatArr.length - 1] + offset;
-        for (int i = 0; i <= max; i += 1) {
+        for (int i = 0; i <= border; i += 1) {
             res = Math.max(res, resArr[i]);
         }
         
