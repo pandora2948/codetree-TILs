@@ -6,9 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int pos = 1000;
-        int[] arr = new int[20001];
+        int[] arr = new int[2001];
         int res = 0;
-        int min = 2000;
+        int min = 2001;
         int max = 0;
 
         for (int i = 0; i < n; i += 1) {
