@@ -7,7 +7,7 @@ public class Main {
         int n = sc.nextInt();
         int[][] arr = new int [n][2];
         Integer[] flatArr = new Integer[n * 2];
-        int[] resArr = new int[200];
+        int[] resArr = new int[201];
         int res = 0;
 
         for (int i = 0; i < n; i += 1) {
