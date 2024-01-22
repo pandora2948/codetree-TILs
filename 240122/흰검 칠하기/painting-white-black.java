@@ -1,24 +1,19 @@
 import java.util.*;
 
 public class Main {
-    public static int[] arr = new int[200001];
+    public static int ARR_SIZE = 200001;
+    public static int[] arr = new int[ARR_SIZE];
+    public static int[] arrW = new int[ARR_SIZE];
+    public static int[] arrB = new int[ARR_SIZE];
+    
 // 위치의 타일을 색칠하는 함수
     public static void paintTile(int pos, int dir) {
-        if (arr[pos] == 0) {
-            arr[pos] = dir;
-            return;
+        arr[pos] = dir;
+        if (dir == -1) {
+            arrW[pos] += 1;
         }
-
-        if (arr[pos] == 4) {
-            return;
-        }
-
-        //  해당 타일의 색과 색칠 횟수를 각 -1, 2, -3 과 같이 표현하기 위한 로직
-        arr[pos] = (Math.abs(arr[pos]) + 1) * (arr[pos] / Math.abs(arr[pos]) * (-1));
-        
-        if (Math.abs(arr[pos]) == 4) {
-            arr[pos] = 4;
-            return;
+        else {
+            arrB[pos] += 1;
         }
     }
 
@@ -46,7 +41,7 @@ public class Main {
 
         for (int i = min; i <= max; i += 1) {
             // 각 2번이상 색칠되어져 회색 : 요소의 절대값이 4 이상
-            if (arr[i] == 4) {
+            if (arrW[i] >= 2 && arrB[i] >= 2) {
                 res[2] += 1;
                 continue;
             }
@@ -56,7 +51,10 @@ public class Main {
                 continue;
             }
             // 4 이하의 양수일 경우 검은색
-            res[1] += 1;
+            if (arr[i] > 0) {
+                res[1] += 1;
+                continue;
+            }
         }
 
         for (int i = 0; i < 3; i += 1) {
