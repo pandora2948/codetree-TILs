@@ -15,7 +15,7 @@ public class Main {
         }
 
         for (int i = 0; i < n; i += 1) {
-            if (arr[i] <= t || i == 1 || arr[i - 1] >= arr[i]) {
+            if (i == 0 || arr[i] <= t || arr[i - 1] >= arr[i]) {
                 cnt = 1;
                 continue;
             }
