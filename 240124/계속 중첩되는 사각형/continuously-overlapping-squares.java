@@ -15,10 +15,10 @@ public class Main {
                 arg[j] = sc.nextInt() + 100;
             }
 
-            bound[0][0] = arg[0];
-            bound[0][1] = arg[2];
-            bound[1][0] = arg[1];
-            bound[1][1] = arg[3];
+            bound[0][0] = Math.min(bound[0][0], arg[0]);
+            bound[0][1] = Math.max(bound[0][1], arg[2]);
+            bound[1][0] = Math.min(bound[1][0], arg[1]);
+            bound[1][1] = Math.max(bound[1][1], arg[3]);
 
             for (int j = arg[0]; j < arg[2]; j += 1) {
                 for (int k = arg[1]; k < arg[3]; k += 1) {
