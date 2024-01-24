@@ -6,23 +6,24 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int t = sc.nextInt();
-        int cnt = 0;
+        int cnt = 1;
         int max = 1;
         int[] arr = new int[n];
+        boolean isExist = false;
 
         for (int i = 0; i < n; i += 1){
             arr[i] = sc.nextInt();
         }
 
-        for (int i = 0; i < n; i += 1) {
-            if (i == 0 || arr[i] <= t || arr[i - 1] >= arr[i]) {
-                cnt = 1;
-                continue;
+        for (int i = 1; i < n; i += 1) {
+            if (arr[i - 1] <= arr[i] && arr[i] > t) {
+                cnt += 1;
+                max = Math.max(max, cnt);
+                isExist = true;
             }
-            cnt += 1;
-            max = Math.max(cnt, max);
+            cnt = 1;
         }
 
-        System.out.println(max);
+        System.out.println(isExist ? max : 0);
     }
 }
