@@ -28,6 +28,7 @@ public class Main {
             }
         }
 
+        boolean isEmpty = true;
         for (int i = xBound[0]; i <= xBound[1]; i += 1) {
             for (int j = yBound[0]; j<= yBound[1]; j += 1) {
                 if (cord[i][j] == 1) {
@@ -35,11 +36,12 @@ public class Main {
                     res[0][1] = Math.max(res[0][1], i + 1);
                     res[1][0] = Math.min(res[1][0], j);
                     res[1][1] = Math.max(res[1][1], j + 1);
+                    isEmpty = false;
+                    continue;
                 }
             }
         }
-
         
-        System.out.println((res[0][1] - res[0][0]) * (res[1][1] - res[1][0]));
+        System.out.println(isEmpty ? 0 : (res[0][1] - res[0][0]) * (res[1][1] - res[1][0]));
     }
 }
