@@ -6,8 +6,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int[] arrA = new int[n * 1000000 + 1];
-        int[] arrB = new int[m * 1000000 + 1];
+        int[] arrA = new int[n * 1000 + 1];
+        int[] arrB = new int[m * 1000 + 1];
         int timeA = 1;
         int timeB = 1;
 
