@@ -42,25 +42,21 @@ public class Main {
             }
         }
 
-        int bound = Math.max(timeA, timeB);
-        int idxA = 0;
-        int idxB = 0;
+        if (timeA > timeB) {
+            for (int i = timeB; i <= timeA; i += 1) {
+                posB[i] = posB[timeB];
+            }
+        }
+        else if (timeA < timeB) {
+            for (int i = timeA; i <= timeB; i += 1) {
+                posA[i] = posA[timeA];
+            }
+        }
 
+        int bound = Math.max(timeA, timeB);
 
         for (int i = 1; i <= bound; i += 1) {
-            idxA += 1;
-            idxB += 1;
-            if (i > timeA) {
-                if (posA[timeA] != posB[idxB - 1] && posA[timeA] == posB[idxB]) {
-                    cnt += 1;
-                }
-            }
-            else if (i > timeB) {
-                if (posA[idxA - 1] != posB[timeB] && posA[idxA] == posB[timeB]) {
-                    cnt += 1;
-                }
-            }
-            else if (posA[idxA - 1] != posB[idxB - 1] && posA[idxA] == posB[idxB]) {
+            if (posA[i - 1] != posB[i - 1] && posA[i] == posB[i]) {
                 cnt += 1;
             }
         }
