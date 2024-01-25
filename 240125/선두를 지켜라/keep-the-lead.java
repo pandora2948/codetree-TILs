@@ -4,19 +4,18 @@ public class Main {
     public static void main(String[] args) {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int[] arrA = new int[n * 10000 + 1];
-        int[] arrB = new int[m * 10000 + 1];
+        int n = sc.nextInt(), m = sc.nextInt();
+        int[] distanceA = new int[1000 * n + 1];
+        int[] distanceB = new int[1000 * m + 1];
+
         int timeA = 1;
         int timeB = 1;
-
         for (int i = 0; i < n; i += 1) {
             int v = sc.nextInt();
             int t = sc.nextInt();
             
             for (int j = 0; j < t; j += 1) {
-                arrA[timeA] = arrA[timeA - 1] + v;
+                distanceA[timeA] = distanceA[timeA - 1] + v;
                 timeA += 1;
             }
         }
@@ -24,39 +23,25 @@ public class Main {
         for (int i = 0; i < m; i += 1) {
             int v = sc.nextInt();
             int t = sc.nextInt();
-
+            
             for (int j = 0; j < t; j += 1) {
-                arrB[timeB] = arrB[timeB - 1] + v;
+                distanceB[timeB] = distanceB[timeB - 1] + v;
                 timeB += 1;
             }
         }
 
-        int bound = Math.min(timeA, timeB);
-        int cnt = 0;
-        int state = 2;
-        int pos = 0;
-
-        while (arrA[pos] == arrB[pos]) {
-            pos += 1;
-            if (arrA[pos] > arrB[pos]) {
-                state = 0;
-            }
-            else if (arrA[pos] < arrB[pos]) {
-                state = 1;
-            }
-        }
-
-        for (int i = pos + 1; i <= bound; i += 1) {
-            if (arrA[i] > arrB[i] && state == 1) {
+        int cnt = -1;
+        int state = 0;
+        for (int i = 0; i <= timeB; i += 1) {
+            if (distanceA[i] > distanceB[i] && state != -1) {
                 cnt += 1;
-                state = 0;
+                state = -1;
                 continue;
             }
 
-            if (arrA[i] < arrB[i] && state == 0) {
+            if (distanceA[i] < distanceB[i] && state != 1) {
                 cnt += 1;
                 state = 1;
-                continue;
             }
         }
 
