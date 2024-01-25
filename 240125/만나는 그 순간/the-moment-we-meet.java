@@ -44,12 +44,18 @@ public class Main {
         }
 
         int bound = Math.max(timeA, timeB);
+        boolean isExist = false;
 
         for (int i = 1; i <= bound; i += 1) {
             if (arrA[i] == arrB[i]) {
                 System.out.println(i);
+                isExist = true;
                 break;
             }
+        }
+
+        if (!isExist) {
+            System.out.println(-1);
         }
 
         
