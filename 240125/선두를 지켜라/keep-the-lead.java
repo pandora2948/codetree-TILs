@@ -31,7 +31,7 @@ public class Main {
             }
         }
 
-        int bound = Math.max(timeA, timeB);
+        int bound = Math.min(timeA, timeB);
         int cnt = 0;
         int state = 2;
         int pos = 0;
