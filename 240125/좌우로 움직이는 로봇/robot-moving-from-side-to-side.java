@@ -44,7 +44,7 @@ public class Main {
 
         int bound = Math.max(timeA, timeB);
 
-        for (int i = 1; i <= bound; i += 1) {
+        for (int i = 1; i < bound; i += 1) {
             if (posA[i - 1] != posB[i - 1] && posA[i] == posB[i]) {
                 cnt += 1;
             }
