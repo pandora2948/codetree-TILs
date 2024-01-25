@@ -9,9 +9,6 @@ public class Main {
         int arrB[] = new int[n * 1000 + 1];
         int timeA = 0;
         int timeB = 0;
-        arrA[0] = 0;
-        arrB[0] = 0;
-
 
         for (int i = 0; i < n; i += 1) {
             char d = sc.next().charAt(0);
