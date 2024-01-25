@@ -44,8 +44,11 @@ public class Main {
 
         int bound = Math.max(timeA, timeB);
 
-        for (int i = 1; i < bound; i += 1) {
-            if (posA[i - 1] != posB[i - 1] && posA[i] == posB[i]) {
+        for (int i = 1; i <= bound; i += 1) {
+            int magicalNumber1 = i > timeA ? timeA : i;
+            int magicalNumber2 = i > timeB ? timeB : i;
+
+            if (posA[magicalNumber1 - 1] != posB[magicalNumber2 - 1] && posA[magicalNumber1] == posB[magicalNumber2]) {
                 cnt += 1;
             }
         }
