@@ -16,12 +16,18 @@ public class Main {
         }
 
         for (int i = 0; i < n; i += 1) {
-            if (i > 0 && arr[i] > t) {
-                cnt += 1;
-                max = Math.max(max, cnt);
+            if (arr[i] <= t) {
+                cnt = 0;
                 continue;
             }
-            cnt = 1;
+            
+            if (i == 0) {
+                cnt = 1;
+                continue;
+            }
+
+            cnt += 1;
+            max = Math.max(max, cnt);
         }
 
         System.out.println(max);
