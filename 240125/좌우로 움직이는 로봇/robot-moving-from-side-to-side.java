@@ -43,12 +43,24 @@ public class Main {
         }
 
         int bound = Math.max(timeA, timeB);
+        int idxA = 0;
+        int idxB = 0;
+
 
         for (int i = 1; i <= bound; i += 1) {
-            int magicalNumber1 = i > timeA ? timeA : i;
-            int magicalNumber2 = i > timeB ? timeB : i;
-
-            if (posA[magicalNumber1 - 1] != posB[magicalNumber2 - 1] && posA[magicalNumber1] == posB[magicalNumber2]) {
+            idxA += 1;
+            idxB += 1;
+            if (i > timeA) {
+                if (posA[timeA] != posB[idxB - 1] && posA[timeA] == posB[idxB]) {
+                    cnt += 1;
+                }
+            }
+            else if (i > timeB) {
+                if (posA[idxA - 1] != posB[timeB] && posA[idxA] == posB[timeB]) {
+                    cnt += 1;
+                }
+            }
+            else if (posA[idxA - 1] != posB[idxB - 1] && posA[idxA] == posB[idxB]) {
                 cnt += 1;
             }
         }
