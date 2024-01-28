@@ -5,15 +5,14 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), k = sc.nextInt(), p = sc.nextInt(), t = sc.nextInt();
-        int[][] dev = new int[t + 1][n];
+        int[] dev = new int[n];
         Integer[][] arg = new Integer[t][3];
 
-        for (int i = 0; i <= t; i += 1) {
-            for (int j = 0; j < n; j += 1) {
-                dev[i][j] = -1;
-            }
+        for (int i = 0; i < n; i += 1) {
+            dev[i] = -1;
         }
-        dev[0][p - 1] = k;
+
+        dev[p - 1] = k;
 
         for (int i = 0; i < t; i += 1) {
             int time = sc.nextInt(), x = sc.nextInt() - 1, y = sc.nextInt() - 1;
@@ -30,22 +29,31 @@ public class Main {
             int x = arg[i][1];
             int y = arg[i][2];
 
-            if (dev[i][x] > 0) {
-                dev[i + 1][y] = k;
-            }
-            else if (dev[i][y] > 0) {
-                dev[i + 1][x] = k;
-            }
-            
-            for (int j = 0; j < n; j += 1) {
-                if (dev[i][j] > 0) {
-                    dev[i + 1][j] = dev[i][j] - 1;
+            if (dev[x] > 0) {
+                dev[x] = dev[x] - 1;
+                if (dev[y] > 0) {
+                    dev[y] = dev[y] - 1;
+                }
+
+                else if (dev[y] < 0) {
+                    dev[y] = k;
                 }
             }
+            else if (dev[y] > 0 && dev[x] < 0) {
+                dev[y] = dev[y] - 1;
+                dev[x] = k;
+            }
+
+            for (int j = 0; j < n; j += 1) {
+                if (j != y && j != x) {
+                    dev[j] = dev[j];
+                }
+            }
+            
         }
 
         for (int i = 0; i < n; i += 1) {
-            System.out.print(dev[t - 1][i] == -1 ? 0 : 1);
+            System.out.print(dev[i] == -1 ? 0 : 1);
         }
 
     }
