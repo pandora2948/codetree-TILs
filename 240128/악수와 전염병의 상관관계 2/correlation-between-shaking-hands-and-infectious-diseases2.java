@@ -25,7 +25,6 @@ public class Main {
             }
         });
 
-        System.out.println(Arrays.toString(dev));
         for (int i = 0; i < t; i += 1) {
             int x = arg[i][1];
             int y = arg[i][2];
