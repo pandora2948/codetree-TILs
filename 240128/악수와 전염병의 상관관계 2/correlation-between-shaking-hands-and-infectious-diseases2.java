@@ -25,31 +25,27 @@ public class Main {
             }
         });
 
+        System.out.println(Arrays.toString(dev));
         for (int i = 0; i < t; i += 1) {
             int x = arg[i][1];
             int y = arg[i][2];
 
             if (dev[x] > 0) {
-                dev[x] = dev[x] - 1;
+                dev[x] -= 1;
                 if (dev[y] > 0) {
-                    dev[y] = dev[y] - 1;
+                    dev[y] -= 1;
                 }
 
                 else if (dev[y] < 0) {
                     dev[y] = k;
                 }
             }
-            else if (dev[y] > 0 && dev[x] < 0) {
-                dev[y] = dev[y] - 1;
-                dev[x] = k;
-            }
-
-            for (int j = 0; j < n; j += 1) {
-                if (j != y && j != x) {
-                    dev[j] = dev[j];
+            else if (dev[y] > 0) {
+                dev[y] -= 1;
+                if (dev[x] < 0) {
+                    dev[x] = k;
                 }
             }
-            
         }
 
         for (int i = 0; i < n; i += 1) {
