@@ -30,10 +30,10 @@ public class Main {
             int x = arg[i][1];
             int y = arg[i][2];
 
-            if (dev[i][x] > 0 && dev[i][y] < 0) {
+            if (dev[i][x] > 0) {
                 dev[i + 1][y] = k;
             }
-            else if (dev[i][x] < 0 && dev[i][y] > 0) {
+            else if (dev[i][y] > 0) {
                 dev[i + 1][x] = k;
             }
             
