@@ -49,14 +49,14 @@ public class Main {
             case 3:
                 x = 0;
                 y = (n - 1) - (k % n);
-                d = 2;
+                d = 1;
                 break;
         }
 
         while (isInside(x, y, n)) {
             cnt += 1;
             int cur = tbl[y][x];
-            
+
             switch (d) {
                 case 0:
                     x += cur == -1 ? 1 : -1;
@@ -67,7 +67,7 @@ public class Main {
                     y += cur == -1 ? -1 : 1;
                     d = cur == -1 ? 0 : 2;
                     break;
-                    
+
                 case 2:
                     x += cur == -1 ? -1 : 1;
                     d = cur == -1 ? 3 : 1;
