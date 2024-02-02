@@ -18,13 +18,13 @@ public class Main {
             for (int j = 1; j < c - 1; j += 1) {
                 for (int k = i + 1; k < r - 1; k += 1) {
                     for (int l = j + 1; l < c - 1; l += 1) {
-                        if (tbl[i][j] == 'B' && tbl[k][l] == 'W') {
+                        if (tbl[i][j] != tbl[0][0] && tbl[k][l] == tbl[0][0]) {
                             cnt += 1;
                         }
                     }
                 }
             }
         }
-        System.out.println(cnt);
+        System.out.println(tbl[0][0] == tbl[r - 1][c - 1] ? 0 : cnt);
     }
 }
