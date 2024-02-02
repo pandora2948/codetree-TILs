@@ -20,7 +20,7 @@ public class Main {
                     int b = arr[j];
                     int c = arr[k];
                     for (int l = 0; l < 4; l += 1) {
-                        if ((a % 10) + (b % 10) + (c % 10) > 10) {
+                        if ((a % 10) + (b % 10) + (c % 10) >= 10) {
                             isMagicalNumbers = false;
                             break;
                         }
