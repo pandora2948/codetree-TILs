@@ -13,6 +13,6 @@ public class Main {
             max = Math.max(max, Integer.parseInt(sb.toString(), 2));
         }
 
-        System.out.println(max);
+        System.out.println(max == Integer.parseInt(a, 2) ? 0 : max);
     }
 }
