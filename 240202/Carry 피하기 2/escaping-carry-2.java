@@ -32,6 +32,6 @@ public class Main {
                 }
             }
         }
-        System.out.println(max);
+        System.out.println(max == 0 ? -1 : max);
     }
 }
