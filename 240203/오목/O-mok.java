@@ -51,10 +51,8 @@ public class Main {
                 if (c == 0) continue;
 
                 boolean isWin = true;
-                for (int l = 0; l < 5; l += 1) {
-                    if (tbl[i][j + l] != c) {
-                        isWin = false;
-                    }
+                for (int k = 0; k < 5; k += 1) {
+                    isWin = isWin && tbl[i][j + k] == c;
                 }
                 if (isWin) {
                     printWin(c, 1, i, j);
@@ -72,9 +70,7 @@ public class Main {
 
                 boolean isWin = true;
                 for (int k = 0; k < 5; k += 1) {
-                    if (tbl[i + k][j] != c) {
-                        isWin = false;
-                    }
+                    isWin = isWin && tbl[i + k][j] == c;
                 }
                 if (isWin) {
                     printWin(c, 2, i, j);
@@ -91,9 +87,7 @@ public class Main {
 
                 boolean isWin = true;
                 for (int k = 0; k < 5; k += 1) {
-                    if (tbl[i + k][j + k] != c) {
-                        isWin = false;
-                    }
+                    isWin = isWin && tbl[i + k][j + k] == c;
                 }
                 
                 if (isWin) {
@@ -102,7 +96,7 @@ public class Main {
                 }
             }
         }
-
+        // 대각(상)
         for (int i = 4; i < n; i += 1) {
             for (int j = 0; j < n - 4; j += 1) {
                 int c = tbl[i][j];
@@ -110,9 +104,7 @@ public class Main {
 
                 boolean isWin = true;
                 for (int k = 0; k < 5; k += 1) {
-                    if (tbl[i - k][j + k] != c) {
-                        isWin = false;
-                    }
+                    isWin = isWin && tbl[i - k][j + k] == c;
                 }
                 if (isWin) {
                     printWin(c, 4, i , j);
