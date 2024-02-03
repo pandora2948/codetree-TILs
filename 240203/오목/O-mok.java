@@ -121,7 +121,9 @@ public class Main {
             }
         }
 
-        winColor == 0 && System.out.println(0);
+        if (winColor == 0) {
+            System.out.println(0);
+        }
 
 
     }
