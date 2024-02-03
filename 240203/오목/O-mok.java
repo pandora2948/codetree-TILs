@@ -46,7 +46,7 @@ public class Main {
         
         // 가로
         for (int i = 0; i < n; i += 1) {
-            for (int j = 0; j < n - 5; j += 1) {
+            for (int j = 0; j < n - 4; j += 1) {
                 int c = tbl[i][j];
                 if (c == 0) continue;
 
@@ -65,7 +65,7 @@ public class Main {
 
 
         // 세로
-        for (int i = 0; i < n - 5; i += 1) {
+        for (int i = 0; i < n - 4; i += 1) {
             for (int j = 0; j < n; j += 1) {
                 int c = tbl[i][j];
                 if (c == 0) continue;
@@ -84,7 +84,7 @@ public class Main {
         }
 
         // 대각(하)
-        for (int i = 0; i < n - 5; i += 1) {
+        for (int i = 0; i < n - 4; i += 1) {
             for (int j = 0; j < n - 5; j += 1) {
                 int c = tbl[i][j];
                 if (c == 0) continue;
@@ -104,7 +104,7 @@ public class Main {
         }
 
         for (int i = 4; i < n; i += 1) {
-            for (int j = 0; j < n - 5; j += 1) {
+            for (int j = 0; j < n - 4; j += 1) {
                 int c = tbl[i][j];
                 if (c == 0) continue;
 
