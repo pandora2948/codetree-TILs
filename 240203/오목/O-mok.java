@@ -121,6 +121,8 @@ public class Main {
             }
         }
 
+        winColor == 0 && System.out.println(0);
+
 
     }
 }
