@@ -19,9 +19,13 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             for (int j = 0; j < n; j += 1) {
+                if (!isInside(j + 2, n)) continue;
+
                 int cnt = 0;
                 for (int k = 0; k < 3; k += 1) {
-                    cnt += 1;
+                    if (tbl[i][j + k] == 1) {
+                        cnt += 1;
+                    }
                 }
                 res[0] = Math.max(res[0], cnt);
             }
