@@ -16,9 +16,11 @@ public class Main {
             pos[p] += a;
         }
 
-        for (int i = 0; i <= 100 - k * 2; i += 1) {
+        for (int i = 0; i <= 101 - k; i += 1) {
             int sum = 0;
             for (int j = 0; j <= k * 2; j += 1) {
+                if (i + j > 100) break;
+
                 sum += pos[i + j];
             }
 
