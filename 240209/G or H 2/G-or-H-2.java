@@ -9,6 +9,10 @@ public class Main {
         int res = 0;
         char[] arr = new char[MAX_POS];
 
+        for (int i = 0; i < MAX_POS; i += 1) {
+            arr[i] = 'X';
+        }
+
         for (int i = 0; i < n; i += 1) {
             int p = sc.nextInt();
             char c = sc.next().charAt(0);
@@ -17,25 +21,25 @@ public class Main {
         }
 
         for (int i = 0; i < MAX_POS; i += 1) {
-            int gCount = 0;
-            int hCount = 0;
-            for (int j = 0; j < MAX_POS; j += 1) {
-                if (i + j >= MAX_POS) break;
+            for (int j = i; j < MAX_POS; j += 1) {
+                int gCount = 0;
+                int hCount = 0;
+                for (int k = i; k <= j; k += 1) {
+                    if (arr[k] == 'G') {
+                        gCount += 1;
+                    }
 
-                if (arr[i + j] == 'G') {
-                    gCount += 1;
-                }
+                    if (arr[k] == 'H') {
+                        hCount += 1;
+                    }
 
-                if (arr[i + j] == 'H') {
-                    hCount += 1;
-                }
-
-                if (gCount != 0 && gCount == hCount) {
-                    res = Math.max(res, j - 1);
-                    break;
+                    if (gCount != 0 && gCount == hCount && arr[k] != 'X') {
+                        res = Math.max(res, k - i - 1);
+                    }
                 }
             }
         }
+
         System.out.println(res);
     }
 }
