@@ -21,12 +21,12 @@ public class Main {
         }
 
         for (int i = 0; i < MAX_POS; i += 1) {
-            for (int j = i + 1; j < MAX_POS; j += 1) {
-                if (arr[i] == 'X' || arr[j - 1] == 'X') continue;
+            for (int j = i; j < MAX_POS; j += 1) {
+                if (arr[i] == 'X' || arr[j] == 'X') continue;
 
                 int gCount = 0;
                 int hCount = 0;
-                for (int k = i; k < j; k += 1) {
+                for (int k = i; k <= j; k += 1) {
                     if (arr[k] == 'G') {
                         gCount += 1;
                         continue;
@@ -41,7 +41,7 @@ public class Main {
                 if (gCount + hCount == 0) continue;
 
                 if (gCount == hCount) {
-                    res = Math.max(res, j - i - 1);
+                    res = Math.max(res, j - i);
                 }
 
             }
