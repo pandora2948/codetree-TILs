@@ -7,13 +7,16 @@ public class Main {
         int n = sc.nextInt();
         int h = sc.nextInt();
         int t = sc.nextInt();
-        int cnt = 0;
         int res = 0;
+        int cnt = 0;
 
         int[] pos = new int[n];
 
         for (int i = 0; i < n; i += 1) {
             pos[i] = Math.abs(sc.nextInt() - h);
+            if (pos[i] == 0) {
+                cnt += 1;
+            }
         }
         
         Arrays.sort(pos);
