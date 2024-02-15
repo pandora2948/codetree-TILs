@@ -7,31 +7,22 @@ public class Main {
         int n = sc.nextInt();
         int h = sc.nextInt();
         int t = sc.nextInt();
-        int res = 0;
-        int cnt = 0;
+        int min = Integer.MAX_VALUE;
 
         int[] pos = new int[n];
-
+        // 각 요소들을 H와의 차이로 저장
         for (int i = 0; i < n; i += 1) {
             pos[i] = Math.abs(sc.nextInt() - h);
-            if (pos[i] == 0) {
-                cnt += 1;
-            }
         }
         
-        Arrays.sort(pos);
-        
-        while (cnt < t) {
-            for (int i = 0; i < n; i += 1) {
-                if (pos[i] != 0) {
-                    res += pos[i];
-                    pos[i] -= pos[i];
-                    cnt = i + 1;
-                    break;
-                }
+        for (int i = 0; i <= n - t; i += 1) {
+            int sum = 0;
+            for (int j = i; j < n; j += 1) {
+                sum += pos[j];
             }
+            min = Math.min(min, sum);
         }
 
-        System.out.println(res);
+        System.out.println(min);
     }
 }
