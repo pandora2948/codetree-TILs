@@ -17,9 +17,11 @@ public class Main {
         
         for (int i = 0; i <= n - t; i += 1) {
             int sum = 0;
-            for (int j = i; j < n; j += 1) {
+
+            for (int j = i; j < i + t; j += 1) {
                 sum += pos[j];
             }
+
             min = Math.min(min, sum);
         }
 
