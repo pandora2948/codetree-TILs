@@ -10,7 +10,7 @@ public class Main {
         String b = sc.next();
 
         while (!a.equals(b)) {
-            a = a.substring(a.length() - 1) + a.substring(0, a.length() - 1);
+            a = a.substring(a.length() - 1).concat(a.substring(0, a.length() - 1));
             cnt += 1;
         }
 
