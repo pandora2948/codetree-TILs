@@ -9,11 +9,15 @@ public class Main {
         String a = sc.next();
         String b = sc.next();
 
-        while (!a.equals(b)) {
+        for (int i = 0; i < b.length(); i += 1) {
+            if (b.equals(a)) {
+                break;
+            }
+            
             a = a.substring(a.length() - 1).concat(a.substring(0, a.length() - 1));
             cnt += 1;
         }
 
-        System.out.println(cnt);
+        System.out.println(a.equals(b) ? cnt : -1);
     }
 }
