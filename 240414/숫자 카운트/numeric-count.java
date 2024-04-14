@@ -43,7 +43,7 @@ public class Main {
 
                         if (y == i || y == k) cnt2 += 1;
 
-                        if (z == i || z == k) cnt2 += 1;
+                        if (z == i || z == j) cnt2 += 1;
 
                         if (cnt1 != b[q] || cnt2 != c[q]) {
                             success = false;
