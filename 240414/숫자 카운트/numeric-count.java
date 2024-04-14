@@ -49,13 +49,11 @@ public class Main {
                             success = false;
                             break;
                         }
-
                     }
 
                     if (success) {
                         cnt += 1;
                     }
-                    
 
                 }
             }
