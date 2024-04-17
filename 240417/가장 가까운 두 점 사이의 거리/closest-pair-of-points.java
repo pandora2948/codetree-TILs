@@ -22,20 +22,21 @@ public class Main {
                 if (i == j) continue;
 
                 int x1 = arr[i][0];
-                int x2 = arr[j][0];
                 int y1 = arr[i][1];
+
+                int x2 = arr[j][0];
                 int y2 = arr[j][1];
+
                 int w = Math.abs(x1 - x2);
                 int h = Math.abs(y1 - y2);
 
-                if (w + h < min[0] + min[1]) {
-                    min[0] = Math.min(min[0], w);
-                    min[1] = Math.min(min[1], h);
+                if (Math.pow(w, 2) + Math.pow(h, 2) < Math.pow(min[0], 2) + Math.pow(min[1], 2)) {
+                    min[0] = w;
+                    min[1] = h;
                 }
             }
         }
-
-        System.out.println((int) (Math.pow(min[0], 2) + Math.pow(min[1], 2)));
+        System.out.println((int) (Math.pow(min[0] , 2) + Math.pow(min[1], 2)));
 
     }
 }
