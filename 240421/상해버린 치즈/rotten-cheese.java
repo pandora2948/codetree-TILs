@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +10,8 @@ public class Main {
 
         int[][] arrD = new int[d][3];
         int[][] arrS = new int[s][2];
-        int[] contaminated = new int[m];
+        int[] contaminated = new int[d * m];
+        int contaminatedIdx = 0;
         int res = 0;
 
         for (int i = 0; i < d; i += 1) {
@@ -27,18 +29,21 @@ public class Main {
 
         for (int i = 0; i < s; i += 1) {
             for (int j = 0; j < d; j += 1) {
-                if (arrD[j][0] == arrS[i][0] && arrD[j][2] + 1 == arrS[i][1]) {
-                    contaminated[arrD[j][1]] = 1;
-                    break;
+                if (arrS[i][0] == arrD[j][0] && arrS[i][1] > arrD[j][2]) {
+                    contaminated[contaminatedIdx] = arrD[j][1];
+                    contaminatedIdx += 1;
                 }
             }
         }
 
+        contaminated = Arrays.stream(contaminated).distinct().toArray();
+
         for (int i = 0; i < contaminated.length; i += 1) {
             int[] person = new int[n];
             int cnt = 0;
+
             for (int j = 0; j < d; j += 1) {
-                if (contaminated[i] == arrD[j][1]) {
+                if (arrD[j][1] == contaminated[i]) {
                     person[arrD[j][0] - 1] = 1;
                 }
             }
@@ -46,11 +51,10 @@ public class Main {
             for (int j = 0; j < n; j += 1) {
                 cnt += person[j];
             }
-
+            
             res = Math.max(res, cnt);
-
+            
         }
-
 
         System.out.println(res);
 
