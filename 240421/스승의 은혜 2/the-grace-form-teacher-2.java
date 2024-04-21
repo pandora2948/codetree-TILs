@@ -22,9 +22,11 @@ public class Main {
             if (cost + arr[i] > b) {
                 if (cost + (arr[i] / 2) <= b) {
                     res = i + 1;
+                    break;
                 }
                 else {
                     res = i;
+                    break;
                 }
             }
 
