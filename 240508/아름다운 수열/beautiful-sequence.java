@@ -25,11 +25,11 @@ public class Main {
         for (int i = 0; i < n - m + 1; i += 1) {
             int[] tarArray = Arrays.copyOfRange(arrA, i, i + m);
             Arrays.sort(tarArray);
-            int diff = Math.abs(tarArray[0] - arrB[0]);
+            int diff = tarArray[0] - arrB[0];
             boolean isBeauty = true;
 
             for (int j = 0; j < m; j += 1) {
-                if (Math.abs(tarArray[j] - arrB[j]) != diff) {
+                if (tarArray[j] - arrB[j] != diff) {
                     isBeauty = false;
                     break;
                 }
