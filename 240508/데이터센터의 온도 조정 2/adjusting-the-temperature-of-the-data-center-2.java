@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static int c, g, h;
-    public static int getPowerCount(int a, int b, int c) {
-        if (c < a) return this.c;
+    public static int getPowerCount(int ta, int tb, int t) {
+        if (t < ta) return c;
 
-        if (a <= c && c <= b) return g;
+        if (ta <= t && t <= tb) return g;
 
-        if (b < c) return h;
+        if (tb < t) return h;
         return 0;
     }
 
