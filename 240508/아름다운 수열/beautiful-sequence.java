@@ -15,7 +15,7 @@ public class Main {
 
         int m = sc.nextInt();
         int[] arrB = new int[m];
-        int[] res = new int[n - m];
+        int[] res = new int[n - m + 1];
 
         for (int i = 0; i < m ; i += 1) {
             arrB[i] = sc.nextInt();
