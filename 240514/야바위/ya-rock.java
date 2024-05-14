@@ -18,7 +18,7 @@ public class Main {
             arrC[i] = Integer.parseInt(st.nextToken());
         }
 
-        for (int i = 0; i < 3; i += 1) {
+        for (int i = 1; i <= 3; i += 1) {
             int score = 0;
             int pos = i;
 
