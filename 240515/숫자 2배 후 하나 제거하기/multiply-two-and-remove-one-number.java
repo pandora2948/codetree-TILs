@@ -19,7 +19,6 @@ public class Main {
             arrPrime[i] *= 2;
 
             for (int j = 0; j < n; j += 1) {
-                if (i == j) continue;
                 int sum = 0;
 
                 for (int k = 0; k < n - 1; k += 1) {
