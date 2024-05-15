@@ -15,16 +15,24 @@ public class Main {
         }
 
         for (int i = 0; i < n; i += 1) {
-            int[] arrPrime = Arrays.copyOf(arr, n);
-            arrPrime[i] *= 2;
-
             for (int j = 0; j < n; j += 1) {
-                int sum = 0;
-                if (i == j) continue;
+                int arrPrime[] = new int[n - 1];
+                int arrPrimeIdx = 0;
+                
+                for (int k = 0; k < n; k += 1) {
+                    if (k == j) continue;
+                    else if (k == i) {
+                        arrPrime[arrPrimeIdx] = arr[k] * 2;
+                    }
+                    else {
+                        arrPrime[arrPrimeIdx] = arr[k];
+                    }
+                    arrPrimeIdx += 1;
+                }
 
-                for (int k = 0; k < n - 1; k += 1) {
-                    if (k == j || k + 1 == j) continue;
-                    
+                int sum = 0;
+
+                for (int k = 0; k < n - 2; k += 1) {
                     sum += Math.abs(arrPrime[k] - arrPrime[k + 1]);
                 }
                 result = Math.min(result, sum);
