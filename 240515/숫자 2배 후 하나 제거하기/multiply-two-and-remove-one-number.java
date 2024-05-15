@@ -22,7 +22,8 @@ public class Main {
                 int sum = 0;
 
                 for (int k = 0; k < n - 1; k += 1) {
-                    if (k == j) continue;
+                    if (k == j || k + 1 == j) continue;
+                    
                     sum += Math.abs(arrPrime[k] - arrPrime[k + 1]);
                 }
                 result = Math.min(result, sum);
