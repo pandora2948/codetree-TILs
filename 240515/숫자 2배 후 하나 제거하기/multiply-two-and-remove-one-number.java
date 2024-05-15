@@ -20,6 +20,7 @@ public class Main {
 
             for (int j = 0; j < n; j += 1) {
                 int sum = 0;
+                if (i == j) continue;
 
                 for (int k = 0; k < n - 1; k += 1) {
                     if (k == j || k + 1 == j) continue;
