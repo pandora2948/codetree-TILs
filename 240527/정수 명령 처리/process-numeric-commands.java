@@ -19,13 +19,13 @@ public class Main {
                     break;
 
                 case "pop":
+                    idx -= 1;
                     System.out.println(arr[idx]);
                     arr[idx] = 0;
-                    idx -= 1;
                     break;
 
                 case "size":
-                    System.out.println(idx + 1);
+                    System.out.println(idx);
                     break;
 
                 case "empty":
