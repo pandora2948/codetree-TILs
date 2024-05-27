@@ -13,6 +13,6 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(arr[1] >= arr[2] ? "intersecting" : "nonintersecting");
+        System.out.println(arr[1] >= arr[2] && arr[0] <= arr[3] ? "intersecting" : "nonintersecting");
     }
 }
