@@ -26,7 +26,7 @@ public class Main {
         for (int i = 0; i < 101; i += 1) {
             maxCount = Math.max(maxCount, pos[i]);
         }
-        
-        System.out.println(maxCount == n - 1 ? "Yes" : "No");
+
+        System.out.println(maxCount >= n - 1 ? "Yes" : "No");
     }
 }
