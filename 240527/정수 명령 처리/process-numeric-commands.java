@@ -33,7 +33,7 @@ public class Main {
                     break;
 
                 case "top":
-                    System.out.println(arr[idx]);
+                    System.out.println(arr[idx - 1]);
                     break;
             }
         }
