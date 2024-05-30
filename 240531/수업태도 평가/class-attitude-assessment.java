@@ -52,7 +52,7 @@ public class Main {
                 .stream()
                 .filter(x -> x == secondMin)
                 .toArray()
-                .length != 1)
+                .length == 1)
         {
             for (int i = 0; i < STUDENT_COUNT; i += 1) {
                 if (map.get(stud[i]) == secondMin) {
