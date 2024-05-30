@@ -35,6 +35,9 @@ public class Main {
             for (int i = 0; i < STUDENT_COUNT; i += 1) {
                 if (map.get(stud[i]) == s) bw.write(stud[i]);
             }
+            bw.flush();
+            bw.close();
+            System.exit(0);
         }
 
         int min = scores.stream()
