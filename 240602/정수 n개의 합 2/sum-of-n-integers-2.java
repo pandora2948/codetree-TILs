@@ -18,9 +18,10 @@ public class Main {
         }
 
         for (int i = 0; i < n - k; i += 1) {
-            int[] arrCpy = Arrays.copyOfRange(arr, i, i + k);
-
-            int sum = Arrays.stream(arrCpy).reduce(0, (acc, cur) -> acc + cur);
+            int sum = 0;
+            for (int j = i; j < i + k; j += 1) {
+                sum += arr[j];
+            }
 
             res = Math.max(res, sum);
         }
