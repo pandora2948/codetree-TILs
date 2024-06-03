@@ -7,7 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        final int MAX_DISTANCE = 100001;
+        final int MAX_DISTANCE = 1000001;
         int[] arrA = new int[MAX_DISTANCE];
         int[] arrB = new int[MAX_DISTANCE];
 
