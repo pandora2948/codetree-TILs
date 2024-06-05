@@ -19,7 +19,7 @@ public class Main {
             }
         }
 
-        bw.write(cnt == 10000 ? String.valueOf(-1) : String.valueOf(cnt));
+        bw.write(cnt == 3000 ? String.valueOf(-1) : String.valueOf(cnt));
         bw.flush();
         bw.close();
     }
