@@ -7,18 +7,14 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
-        int cnt = 10000;
+        int cnt = 3000;
 
-        for (int i = 1; i <= n / 5; i += 1) {
-            for (int j = 1; j <= n / 3; j += 1) {
-                int c = 0;
-                int cur = n;
+        for (int i = n / 5; i >= 0; i -= 1) {
+            int cur = n - (5 * i);
 
-                cur = cur - (5 * i) - (3 * j);
-                c = i + j;
-                
-                if (cur == 0) {
-                    cnt = Math.min(cnt, c);
+            for (int j = 0; j <= n / 3; j += 1) {
+                if (cur - (3 * j) == 0) {
+                    cnt = Math.min(cnt, i + j);
                 }
             }
         }
