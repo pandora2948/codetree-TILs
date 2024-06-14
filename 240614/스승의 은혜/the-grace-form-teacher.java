@@ -28,9 +28,11 @@ public class Main {
         });
 
         while (totalCost < b) {
-            if (arr[cnt][0] + arr[cnt][1] > b && totalCost + (arr[cnt][0] / 2 + arr[cnt][1]) < b) {
-                totalCost += arr[cnt][0] / 2 + arr[cnt][1];
-                cnt += 1;
+            if (arr[cnt][0] + arr[cnt][1] > b) {
+                if (totalCost + (arr[cnt][0] / 2 + arr[cnt][1]) < b) {
+                    totalCost += arr[cnt][0] / 2 + arr[cnt][1];
+                    cnt += 1;
+                }
                 break;
             }
 
