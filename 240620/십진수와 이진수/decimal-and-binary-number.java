@@ -5,9 +5,9 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int n = Integer.parseInt(br.readLine(), 2);
+        String n = br.readLine();
 
-        bw.write(Integer.toBinaryString(n * 17));
+        bw.write(Long.toBinaryString(Long.parseLong(n, 2) * 17));
         bw.flush();
         bw.close();
     }
