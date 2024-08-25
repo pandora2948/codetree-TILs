@@ -23,29 +23,38 @@ public class Main {
         }
 
         for (int i = 0; i < n; i += 1) {
-            int[] rowCnt = new int[100];
+            int rowCnt = 1;
+            int rowMax = 0;
 
-            Arrays.stream(tbl[i]).forEach(e -> rowCnt[e - 1] += 1);
-            int max = Arrays.stream(rowCnt).max().getAsInt();
-            if (max >= m) cnt += 1;
+            for (int j = 0; j < n - 1; j += 1) {
+                if (tbl[i][j] == tbl[i][j + 1]) {
+                    rowCnt += 1;
+                    rowMax = Math.max(rowMax, rowCnt);
+                }
+                else rowCnt = 0;
+
+                if (rowMax >= m) cnt += 1;
+            }
         }
 
         for (int i = 0; i < n; i += 1) {
-            int[] colCpy = new int[n];
-            int[] colCnt = new int[100];
-            for (int j = 0; j < n; j += 1) {
-                colCpy[j] = tbl[i][j];
+            int colCnt = 1;
+            int colMax = 0;
+
+            for (int j = 0; j < n - 1; j += 1) {
+                if (tbl[j][i] == tbl[j + 1][i]) {
+                    colCnt += 1;
+                    colMax = Math.max(colMax, colCnt);
+                }
+                else colCnt = 0;
+
+                if (colMax >= m) cnt += 1;
+
             }
-            Arrays.stream(colCpy).forEach(e -> colCnt[e - 1] += 1);
-            int max = Arrays.stream(colCnt).max().getAsInt();
-            
-            if (max >= m) cnt += 1;
         }
         
         bw.write(String.valueOf(cnt));
         bw.flush();
-        
-
 
     }
 }
