@@ -24,7 +24,7 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             int rowCnt = 1;
-            int rowMax = 0;
+            int rowMax = 1;
 
             for (int j = 0; j < n - 1; j += 1) {
                 if (tbl[i][j] == tbl[i][j + 1]) {
@@ -39,7 +39,7 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             int colCnt = 1;
-            int colMax = 0;
+            int colMax = 1;
 
             for (int j = 0; j < n - 1; j += 1) {
                 if (tbl[j][i] == tbl[j + 1][i]) {
