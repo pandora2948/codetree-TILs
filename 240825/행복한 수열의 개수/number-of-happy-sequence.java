@@ -31,10 +31,10 @@ public class Main {
                     rowCnt += 1;
                     rowMax = Math.max(rowMax, rowCnt);
                 }
-                else rowCnt = 0;
+                else rowCnt = 1;
 
-                if (rowMax >= m) cnt += 1;
             }
+            if (rowMax >= m) cnt += 1;
         }
 
         for (int i = 0; i < n; i += 1) {
@@ -46,11 +46,9 @@ public class Main {
                     colCnt += 1;
                     colMax = Math.max(colMax, colCnt);
                 }
-                else colCnt = 0;
-
-                if (colMax >= m) cnt += 1;
-
+                else colCnt = 1;
             }
+            if (colMax >= m) cnt += 1;
         }
         
         bw.write(String.valueOf(cnt));
