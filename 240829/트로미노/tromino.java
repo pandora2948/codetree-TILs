@@ -30,10 +30,13 @@ public class Main {
 
         for (int i = 0; i < n; i += 1) {
             for (int j = 0; j < m - 2; j += 1) {
-                max = Math.max(max, 
-                    Arrays.stream(Arrays.copyOfRange(tbl[i], j, j + 2))
-                                    .max()
-                                    .orElse(0));
+                int sum = 0;
+
+                for (int k = 0; k < 3; k += 1) {
+                    sum += tbl[i][j + k];
+                }
+
+                max = Math.max(max, sum);
             }
         }
 
