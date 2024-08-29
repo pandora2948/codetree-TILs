@@ -21,10 +21,18 @@ public class Main {
         }
 
         for (int i = 0; i < n - 1; i += 1) {
-            for (int j = 0; j < n - 1; j += 1) {
-                int sum = tbl[i][j] + tbl[i + 1][j] +tbl[i][j + 1] + tbl[i + 1][j + 1];
-                int[] res = new int[]{sum - tbl[i][j], sum - tbl[i + 1][j], sum - tbl[i][j + 1], sum - tbl[i + 1][j + 1]};
-                max = Math.max(max, Arrays.stream(res).max().orElse(0));
+            for (int j = 0; j < m - 1; j += 1) {
+                int[] ele = new int[4];
+                for (int k = 0; k < 4; k += 1) {
+                    if (k < 2) {
+                        ele[k] = tbl[i][j + k];
+                        continue;
+                    }
+
+                    ele[k] = tbl[i + 1][j + (k % 2)];
+                }
+                int sum = Arrays.stream(ele).sum();
+                max = Math.max(max, Arrays.stream(ele).map(e -> sum - e).max().orElse(0));
             }
         }
 
