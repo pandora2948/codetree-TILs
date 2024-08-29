@@ -49,11 +49,10 @@ public class Main {
         }
 
         for (int i = 0; i < m; i += 1) {
-            int sum = 0;
             for (int j = 0; j < n - 2; j += 1) {
-                sum += tbl[j][i] + tbl[j + 1][i] + tbl[j + 2][i];
+                int sum = tbl[j][i] + tbl[j + 1][i] + tbl[j + 2][i];
+                max = Math.max(max, sum);
             }
-            max = Math.max(max, sum);
         }
 
         bw.write(String.valueOf(max));
