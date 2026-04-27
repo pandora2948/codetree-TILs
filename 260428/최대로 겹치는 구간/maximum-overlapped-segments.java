@@ -18,7 +18,7 @@ public class Main {
                 b = Integer.parseInt(st.nextToken()) + 100;
 
             for (int j = a; j < b; j += 1) {
-                lines[j - 1] += 1;
+                lines[j] += 1;
             }
         }
 
