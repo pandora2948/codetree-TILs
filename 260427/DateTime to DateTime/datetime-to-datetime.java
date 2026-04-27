@@ -14,6 +14,6 @@ public class Main {
         int start = 60 * (11 + 24 * 11) + 11;
         int end = 60 * (arr[0] * 24 + arr[1]) + arr[2];
 
-        System.out.println(end - start);
+        System.out.println(end < start ? -1 : end - start);
     }
 }
