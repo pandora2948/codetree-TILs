@@ -33,7 +33,7 @@ public class Main {
 
         int res = 0;
 
-        for (int i = 0; i < 1001; i += 1) {
+        for (int i = 0; i < 2000; i += 1) {
             if (pos[i] > 1) res += 1;
         }
 
