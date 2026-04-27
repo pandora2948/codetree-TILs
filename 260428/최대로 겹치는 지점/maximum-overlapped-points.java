@@ -9,7 +9,7 @@ public class Main {
         StringTokenizer st;
 
         int n = Integer.parseInt(br.readLine());
-        int[] lines = new int[100];
+        int[] lines = new int[101];
 
         for (int i = 0; i < n; i += 1) {
             st = new StringTokenizer(br.readLine());
@@ -23,7 +23,7 @@ public class Main {
         }
 
         int max = 0;
-        for (int i = 0; i < 100; i += 1) {
+        for (int i = 0; i < 101; i += 1) {
             max = Math.max(max, lines[i]);
         }
 
