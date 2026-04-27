@@ -14,15 +14,8 @@ public class Main {
         for (int i = 0; i < n; i += 1) {
             st = new StringTokenizer(br.readLine());
 
-            int a = Integer.parseInt(st.nextToken()),
-                b = Integer.parseInt(st.nextToken());
-
-            if (a < 0) {
-                a = 100 - a;
-            }
-            if (b < 0) {
-                b = 100 - b;
-            }
+            int a = Integer.parseInt(st.nextToken()) + 100,
+                b = Integer.parseInt(st.nextToken()) + 100;
 
             for (int j = a; j < b; j += 1) {
                 lines[j - 1] += 1;
