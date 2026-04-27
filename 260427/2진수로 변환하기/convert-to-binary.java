@@ -16,7 +16,12 @@ public class Main {
         int n = sc.nextInt();
         // Please write your code here.
 
-        f(n);
+        if (n > 0) {
+            f(n);
+        }
+        else {
+            sb.append(0);
+        }
         System.out.println(sb.toString());
     }
 }
