@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/겹치지 않는 사각형의 넓이" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/사각형의 총 넓이 2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/색종이의 총 넓이" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/잔해물을 덮기 위한 사각형의 최소 넓이" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
