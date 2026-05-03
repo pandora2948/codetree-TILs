@@ -46,13 +46,14 @@ public class Main {
             }
         }
 
-        int t = MAX_TIME;
+        int t = -1;
 
         for (int i = 1; i < times[0][0]; i += 1) {
-            if (arrA[i] == arrB[i]) t = Math.min(t, i);
+            if (arrA[i] == arrB[i]) {
+                t = i;
+                break;
+            }
         }
-
-        t = t == MAX_TIME ? -1 : t;
 
         bw.write(String.valueOf(t));
         bw.flush();
