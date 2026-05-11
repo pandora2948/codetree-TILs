@@ -4,12 +4,7 @@ n = int(input())
 def func(num):
     total = 0
     if num % 2 == 0:
-        while True:
-            if num < 10:
-                total += num
-                break
-            total += num % 10
-            num //= 10
+        total = sum(map(int, str(num)))
         if total > 0 and total % 5 == 0:
             return True
     return False
